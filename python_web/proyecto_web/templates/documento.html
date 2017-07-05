@@ -1,0 +1,12 @@
+<html>
+	<head>
+	<link rel="stylesheet" href="">
+	{% load static from staticfiles %>
+	</head>
+	<body>
+		<h1> {{encabezado}} </h1>
+		<p>Esto esta definido en base.html </p>
+		{% block contenido  %}
+		{% endblock %}
+	</body>
+</html> 
