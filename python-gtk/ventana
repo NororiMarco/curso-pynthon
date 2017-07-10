@@ -1,0 +1,21 @@
+import gi
+
+gi.require_version('Gtk,','3.0')
+from gi.repository import Gtk
+
+if __name__=='__main__':
+	ventana = Gtk.window(title = 'ejemplo 1')
+	ventana.connect('delete-event',Gtk.main_quit)
+	boton = Gtk.Button('boton 1')
+	boton.connect('clicked','marco norori')
+	boton2 = Gtk.Button('boton 2')
+	contenedor = Gtk.Vbox()
+
+	contenedor.pack_start(boton, False,False,0)
+	contenedor.pack_end(boton2, False,False,0)
+
+	ventana.add(contenedor)
+	ventana.show_all()
+
+	Gtk.main()
+
