@@ -1,6 +1,7 @@
- import gi
+import gi
 gi.require_version('Gtk','3.0')
-from gi.repositmiventeanat Gtk
+from gi.repositMi_ventana Gtk
+
 
 class miventeana(Gtk,window):
 	def __init__(self , *args, **kwargs):
@@ -12,6 +13,22 @@ class miventeana(Gtk,window):
 
 	def agregar_contenedor(self):
 		contenedor=Gtk.Grid()
+		contenedor=
 
+	#def agregar_contenedor(self):
+		#contenedor=Gtk.Grid()
+		#contenedor=
+
+		text =Gtk.Entry(text= "hola")
+		boton =Gtk.Button('boton')
+		label=Gtk.lable('nada que poner')
+
+if __name__	=='__main__':
+	ventana=Mi_ventana()
+	ventana=add(text)
+	ventana=add(label)
+	ventana=show()
+
+	Gtk.main()
 
  
