@@ -51,57 +51,78 @@ class continentes(Gtk.Window):
   		#self.boton2 = Gtk.Button('Europa')
   		#self.boton3 = Gtk.Button('Asia')
   	def agregar_lista(self):
-		self.modelo = Gtk.ListStore(str)
+		self.modelo = Gtk.ListStore(str,str,float)
 		self.lista_pais = Gtk.TreeView(self.modelo)
+		#self.lista_capital = Gtk.TreeView(self.modelo)
+		#self.lista_poblacion = Gtk.TreeView(self.modelo)
 
   		pais_cellrenderer = Gtk.CellRendererText()
 		columna_paises =  Gtk.TreeViewColumn(
-		'Capitales de America',
+		'paises de America',
 		pais_cellrenderer,
 		text=0)
 
+		capital_cellrenderer = Gtk.CellRendererText()
+		columna_capital =  Gtk.TreeViewColumn(
+		'Capitales',
+		capital_cellrenderer,
+		text=1)
+
+		poblacion_cellrenderer = Gtk.CellRendererText()
+		columna_poblacion =  Gtk.TreeViewColumn(
+		'poblacion',
+		poblacion_cellrenderer,
+		text=2)
+
 
 		self.lista_pais.append_column(columna_paises)
+		self.lista_pais.append_column(columna_capital)
+		self.lista_pais.append_column(columna_poblacion)
+
+		#self.lista_capital.append_column(columna_capital)
+		#self.lista_poblacion.append_column(columna_poblacion)
   		self.contenedor.attach_next_to(self.lista_pais, self.boton, Gtk.PositionType.BOTTOM, 1,1)
+  		#self.contenedor.attach_next_to(self.lista_capital, self.boton, Gtk.PositionType.BOTTOM, 1,1)
+  		#self.contenedor.attach_next_to(self.lista_poblacion, self.boton, Gtk.PositionType.BOTTOM, 1,1)
 
 #capitales de america
   	def lista_capitales(self,btn=None):
        		if len(self.modelo) == 0:
-         		self.modelo.append(['Saint Jhons']),
-         		self.modelo.append(['Buenos Aires']),
-         		self.modelo.append(['Nasau']),
-         		self.modelo.append(['Bridgetown']),
-         		self.modelo.append(['Belmopan']),
-         		self.modelo.append(['Sucre']),
-         		self.modelo.append(['Brasilia']),
-         		self.modelo.append(['Ottawa']),	
-         		self.modelo.append(['Santiago de Chile']),
-         		self.modelo.append(['Bogota']),
-         		self.modelo.append(['San Jose']),
-         		self.modelo.append(['La Habana']),
-         		self.modelo.append(['Roseau']),
-         		self.modelo.append(['Quito']),
-         		self.modelo.append(['San Salvador']),
-         		self.modelo.append(['Washinton D.C']),
-         		self.modelo.append(['Saint George']),
-         		self.modelo.append(['Ciudad de Guatemala']),
-         		self.modelo.append(['Geortown']),
-         		self.modelo.append(['Puerto Principe']),
-         		self.modelo.append(['Tegucigalpa']),
-         		self.modelo.append(['Kingston']),
-         		self.modelo.append(['Ciudad de Mexico']),
-         		self.modelo.append(['Managua']),
-         		self.modelo.append(['Panama']),
-         		self.modelo.append(['Asuncion ']),
-         		self.modelo.append(['Lima']),
-         		self.modelo.append(['Santo Domingo']),
-         		self.modelo.append(['Basseterre']),
-         		self.modelo.append(['Kingstown']),
-         		self.modelo.append(['Castries']),
-         		self.modelo.append(['Paramaribo']),
-         		self.modelo.append(['Puerto Espa;a']),
-         		self.modelo.append(['Montevideo']),
-         		self.modelo.append(['Caracas']),
+         		self.modelo.append(['Antigua y barbuda','managua',250010])
+         		self.modelo.append(['Buenos Aires'])
+         		self.modelo.append(['Nasau'])
+         		self.modelo.append(['Bridgetown'])
+         		self.modelo.append(['Belmopan'])
+         		self.modelo.append(['Sucre'])
+         		self.modelo.append(['Brasilia'])
+         		self.modelo.append(['Ottawa'])
+         		self.modelo.append(['Santiago de Chile'])
+         		self.modelo.append(['Bogota'])
+         		self.modelo.append(['San Jose'])
+         		self.modelo.append(['La Habana'])
+         		self.modelo.append(['Roseau'])
+         		self.modelo.append(['Quito'])
+         		self.modelo.append(['San Salvador'])
+         		self.modelo.append(['Washinton D.C'])
+         		self.modelo.append(['Saint George'])
+         		self.modelo.append(['Ciudad de Guatemala'])
+         		self.modelo.append(['Geortown'])
+         		self.modelo.append(['Puerto Principe'])
+         		self.modelo.append(['Tegucigalpa'])
+         		self.modelo.append(['Kingston'])
+         		self.modelo.append(['Ciudad de Mexico'])
+         		self.modelo.append(['Managua'])
+         		self.modelo.append(['Panama'])
+         		self.modelo.append(['Asuncion '])
+         		self.modelo.append(['Lima'])
+         		self.modelo.append(['Santo Domingo'])
+         		self.modelo.append(['Basseterre'])
+         		self.modelo.append(['Kingstown'])
+         		self.modelo.append(['Castries'])
+         		self.modelo.append(['Paramaribo'])
+         		self.modelo.append(['Puerto Espa;a'])
+         		self.modelo.append(['Montevideo'])
+         		self.modelo.append(['Caracas'])
 
 if __name__ == '__main__':
 	ventana = continentes()
